@@ -18,6 +18,8 @@ module NewrelicMinerPlugin
       report_metric 'Summary/Shares/Stale', 'shares', summary['Stale']
       report_metric 'Summary/Shares/WU', 'MH/second', summary['Work Utility']
 
+      report_metric 'Summary/Pool/RejectRate', 'Percent', summary['Pool Rejected%']
+
       client.devs.body.each do |device|
         device_name = "GPU#{ device['GPU'] }"
 
