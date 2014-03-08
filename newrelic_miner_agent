@@ -1,0 +1,14 @@
+#! /usr/bin/env ruby
+
+require 'rubygems'
+require 'bundler/setup'
+
+require 'cgminer/api'
+require 'newrelic_plugin'
+
+require_relative 'newrelic_miner_plugin/agent'
+
+NewRelic::Plugin::Config.config_file = File.expand_path('newrelic_plugin.yml', File.dirname(__FILE__))
+NewRelic::Plugin::Run.setup_and_run
+
+
